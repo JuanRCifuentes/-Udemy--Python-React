@@ -109,4 +109,4 @@ Frontend made with REACT.
 
 API uses MongoDB Client.
 
-![alt text](WebAPP_Arquitecture.jpeg)
+![alt text](Images/WebApp_Arquitecture.jpeg)
