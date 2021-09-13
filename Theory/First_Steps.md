@@ -1,4 +1,18 @@
-# First Version
+# First Version<!-- omit in toc -->
+
+## Table of Contents<!-- omit in toc -->
+- [Install Node.js, NPM and NPX](#install-nodejs-npm-and-npx)
+- [Run React Application](#run-react-application)
+- [Modifiyng the React App](#modifiyng-the-react-app)
+- [Structure the Frontend App](#structure-the-frontend-app)
+- [Reinstall all dependencies](#reinstall-all-dependencies)
+- [Create Production Build](#create-production-build)
+  - [Use the build](#use-the-build)
+  - [Test / Run locally](#test--run-locally)
+- [Next steps](#next-steps)
+- [Clean up Default React App](#clean-up-default-react-app)
+- [How is everything working](#how-is-everything-working)
+- [React Functional Components](#react-functional-components)
 
 Only frontend, singlepage using Unsplash API
 
@@ -10,7 +24,7 @@ Written in React with
 
 Unsplash API: `https://unsplash.com/`
 
-## Create React App
+## Create React App<!-- omit in toc -->
 
 **Create React App [LINK](https://reactjs.org/docs/create-a-new-react-app.html):** Package 
 
@@ -62,7 +76,7 @@ We see multiple folders and new files.
    5. eslintConfig: Section for configuration of the linter
    6. Browsers list: divides in production and development settings.
 
-2. README.md: Used for making it easy to know commands and start with React.
+2. `README.md`: Used for making it easy to know commands and start with React.
 3. .gitignore: Used for git to ignore certain files in the repository and not track them.
 4. .eslintcashe: Cache for eslint, we will add it to `.gitignore`. In versions 4.0.3 of `create-react-app`, it is not created in root folder, Create it in the folder `frontend`.
 5. SCR FOLDER: All application related to the app should be included here
@@ -96,7 +110,7 @@ To test the build, we can use the npm package `serve`. Serve package can be inst
 
 If you want to use `serve` just once and not install it on your device, you could use `npx serve -s build`.
 
-### Nest steps
+### Next steps
 
 1. Clean up default React App
 2. Initialize Git Repository
@@ -106,3 +120,37 @@ If you want to use `serve` just once and not install it on your device, you coul
 6. Configure ESLint and Prettier to fix and auto format code on filesave
 7. Use fetch to search images on Unsplash
 
+### Clean up Default React App
+
+1. Remove everything whithin the App div in `App.js`.
+2. Delete line 1 (logo import) (TIP: `command+shift+k`).
+3. Delete line 2 (`.App.css`) and space below.
+4. Delete file `logo.svg` on src folder.
+5. Delete file `App.css` on src folder.
+6. Delete file `App.test.js` on src folder.
+7. Delete file `reportWebVitals.js` on src folder. Used for reporting user activity on the app.
+8. Delete file `setupTests.js` on src folder.
+9. Remove lines for importing `reportWebVitals.js` on index/js and to run `reportWebVitals()`.
+10. Remove `code` section on `index.css` file.
+11. Create folder `css` on src folder to keep all `.css` files (including existing `index.css` file).
+12. Adjust location for `index.css` on `index.js`.
+
+### How is everything working
+
+In `index.js` file, there are several imports. The first two lines were installed with all the other dependencies when we typed in terminal `npm install` inside the project folder.
+
+**react-dom:** Stands for Document Object Model and it is  what we see in browser (what it renders).
+
+Inside `index.js` file, we see method `ReactDOM.render()`, and it is called with tqo arguments:
+1. [JSX sintax](https://reactjs.org/docs/introducing-jsx.html) is used by React to create its elements. It is translated into normal JavaScript. for web browser interpretation. In this part resides the whole React App. We can also use some normal HTML with no problems.
+2. `document.getElementById('root')`: We see a variable called `document`, which is a global variable, defined as an HTML file, located in the folder `public`, and ir has a div with `id=root`.
+
+React components are mentioned with capital letter.
+
+To enter JS syntax inside JSX, just use `{}`.
+
+### React Functional Components
+
+These are defined using functions inside `App.js` file. Arrow or normal.
+
+JSX syntax converts lines of HTML into JS by just using the method `React.createElement()`.
