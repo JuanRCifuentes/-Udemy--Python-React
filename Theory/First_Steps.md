@@ -13,6 +13,8 @@
 - [Clean up Default React App](#clean-up-default-react-app)
 - [How is everything working](#how-is-everything-working)
 - [React Functional Components](#react-functional-components)
+  - [Install Bootstrap](#install-bootstrap)
+- [Component Props (Properties)](#component-props-properties)
 
 Only frontend, singlepage using Unsplash API
 
@@ -46,7 +48,7 @@ To check for installation, type `node --version` on terminal. If you can see the
 
 [LINK](https://nodejs.org/en/)
 
-After installing Node.js, tyoe in terminal (in the folder you want your React app to be in) `nps create-react-app my_app`, to use another version of the create react app library, type `create-react-app@4.0.1`.
+After installing Node.js, tyoe in terminal (in the folder you want your React app to be in) `npx create-react-app my_app`, to use another version of the create react app library, type `create-react-app@4.0.1`.
 
 ### Run React Application
 
@@ -154,3 +156,38 @@ To enter JS syntax inside JSX, just use `{}`.
 These are defined using functions inside `App.js` file. Arrow or normal.
 
 JSX syntax converts lines of HTML into JS by just using the method `React.createElement()`.
+
+**REACT BOOTSTRAP:** With this package, you can insert premade elements, such as collapsibles, cards, buttons, etc.
+
+**[LIST OF BOOTSTRAP COMPONENTS](https://react-bootstrap.github.io/components/alerts)**
+
+#### Install Bootstrap
+
+[**GETTING STARTED GUIDE**](https://react-bootstrap.github.io/getting-started/introduction)
+
+1. Write in terminal `npm install react-bootstrap bootstrap`
+2. some stylesheet is required to use Bootstrap components, import into the `App.js` file with `import 'bootstrap/dist/css/bootstrap.min.css';`.
+
+To create components "the clean way", you create a folder names `components` inside the src folder, and then for each component you can create a file (remember, as a React component, start with capital letter).
+
+Inside each file, you can copy/paste code from bootstrap website and export the component
+
+Finally, you need to import that file you just created to the `App.js` file and implement the component (place it in the page as you want it).
+
+### Component Props (Properties)
+
+There are some variables in each components for Bootstrap. To use them like variables and control them outside every component, you can use parameters. The parameter is usually called `props`.
+
+**Inside each component:**
+```javascript
+const Header = (props) => {
+   <Navbar.Brand href="/">{props.title}</Navbar.Brand>
+   ...
+}
+```
+**To implement each component in the `Apps.js` file:**
+
+```html
+<Header title="Images Gallery"/>
+```
+
