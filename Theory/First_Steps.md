@@ -14,7 +14,10 @@
 - [How is everything working](#how-is-everything-working)
 - [React Functional Components](#react-functional-components)
   - [Install Bootstrap](#install-bootstrap)
-- [Component Props (Properties)](#component-props-properties)
+  - [Component Props (Properties)](#component-props-properties)
+  - [Search Component](#search-component)
+  - [Search component logic](#search-component-logic)
+  - [Control Search component](#control-search-component)
 
 Only frontend, singlepage using Unsplash API
 
@@ -174,7 +177,7 @@ Inside each file, you can copy/paste code from bootstrap website and export the 
 
 Finally, you need to import that file you just created to the `App.js` file and implement the component (place it in the page as you want it).
 
-### Component Props (Properties)
+#### Component Props (Properties)
 
 There are some variables in each components for Bootstrap. To use them like variables and control them outside every component, you can use parameters. The parameter is usually called `props`.
 
@@ -191,3 +194,34 @@ const Header = (props) => {
 <Header title="Images Gallery"/>
 ```
 
+#### Search Component
+
+It has:
+1. Input
+2. Button
+
+When clicked, it will use the unsplash API, erase the search user typed, attach acard with unsplash response.
+
+Search word will pass as a property to the button and the cards.
+
+Create a new file called `Search.js`. 
+
+React uses a grid layout, so lets configure the layout for this component:
+1. Go to [layout page](https://react-bootstrap.github.io/layout/grid/) in bootstrap.
+2. Choose the layout
+3. Copy/paste code into the file (inside `return()` statement !!).
+
+For the search component, we can use an empty input box and a button.
+
+#### Search component logic
+
+1. Add `onSumbit` action on form within Search component.
+2. Make the function (inside App component) previous step must implement, and pass it as parameter to the search component.
+
+On Submit, the normal behaviour is to reload the page, but to stop this, we can handle the submit response and type `response.preventDefault()`.
+
+#### Control Search component
+
+Control the state of the app means ot be aware of the changes within the app.
+
+we will use functions **useState**: `import { useState } from 'react';`
