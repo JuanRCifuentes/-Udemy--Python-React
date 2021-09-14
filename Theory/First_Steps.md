@@ -18,6 +18,9 @@
   - [Search Component](#search-component)
   - [Search component logic](#search-component-logic)
   - [Control Search component](#control-search-component)
+- [Unsplash](#unsplash)
+- [Environment variables](#environment-variables)
+- [Fetch image](#fetch-image)
 
 Only frontend, singlepage using Unsplash API
 
@@ -225,3 +228,35 @@ On Submit, the normal behaviour is to reload the page, but to stop this, we can 
 Control the state of the app means ot be aware of the changes within the app.
 
 we will use functions **useState**: `import { useState } from 'react';`
+
+### Unsplash
+
+We can use al API to use images freely.
+
+Rules:
+1. Keep the URL unchanged
+2. If you publish, link the author
+
+[UNSPLASH DEVELOPERS](https://unsplash.com/developers)
+
+### Environment variables
+
+All environment variables are located in a file called `process.env`. 
+
+When you create the production build, all environment variables will be injected into the resulting bundle.
+
+We can create file `.env.local` to set environmental variables. This file will not be tracked by git, as it is specified in the gitignore file.
+
+To create a local variable, type the following inside the file created above: `REACT_APP_VARIABLE_NAME=variable`
+
+We can use the environmental variables by storing those into variables like:
+`const UNSPLASH_KEY = process.env.REACT_APP_UNSPLASH_KEY;`
+
+### Fetch image
+
+To use the `fetch()` function we just enter the url we are gonna use. We can insert variables inside the string with JS string juggling.
+
+Fetch return **promises**, which are used to handle delayed actions (like waiting for the API response). It can result in RESOLVED or REJECTED.
+
+RESOLVED: Use `.then()` function
+REJECTED: Use `.catch()` function
